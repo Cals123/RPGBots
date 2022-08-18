@@ -9,16 +9,16 @@ using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
-    [SerializeField] TextAsset _dialog;
+    
     [SerializeField] Button[] _choiceButtons;
     [SerializeField] TMP_Text _storyText;
 
     Story _story;
 
     [ContextMenu("Start Dialog")]
-    void StartDialog()
+    public void StartDialog(TextAsset dialog)
     {
-        _story = new Story(_dialog.text);
+        _story = new Story(dialog.text);
         RefreshView();
     }
 
