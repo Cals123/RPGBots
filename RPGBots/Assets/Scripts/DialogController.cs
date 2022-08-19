@@ -9,11 +9,12 @@ using UnityEngine.UI;
 
 public class DialogController : MonoBehaviour
 {
-    
+
     [SerializeField] Button[] _choiceButtons;
     [SerializeField] TMP_Text _storyText;
 
     Story _story;
+    [SerializeField] Animator _animator;
 
     [ContextMenu("Start Dialog")]
     public void StartDialog(TextAsset dialog)
@@ -25,9 +26,10 @@ public class DialogController : MonoBehaviour
     private void RefreshView()
     {
         StringBuilder storyTextBuilder = new StringBuilder();
-        while(_story.canContinue)
+        while (_story.canContinue)
         {
             storyTextBuilder.AppendLine(_story.Continue());
+            HandleTags();
         }
         _storyText.SetText(storyTextBuilder);
 
@@ -46,9 +48,26 @@ public class DialogController : MonoBehaviour
                 {
                     _story.ChooseChoiceIndex(choice.index);
                     RefreshView();
-
+                    
                 });
             }
         }
+    }
+
+    void HandleTags()
+    {
+        foreach (var tag in _story.currentTags)
+        {
+            Debug.Log(tag);
+            if (tag == "OpenDoor")
+                OpenDoor();
+        }
+
+    }
+
+    void OpenDoor()
+    {
+        _animator.SetTrigger("Open");
+
     }
 }
