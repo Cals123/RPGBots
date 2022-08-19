@@ -1,5 +1,5 @@
 * Could you open the door please?
-  Okay, door is opening. #OpenDoor
+  Okay, door is opening. #E.OpenGreenDoor
 - I looked at Monsieur Fogg 
 *   ... and I could contain myself no longer.
     'What is the purpose of our journey, Monsieur?'
