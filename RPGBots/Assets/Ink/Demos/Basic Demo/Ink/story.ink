@@ -1,3 +1,4 @@
+
 I've been waiting forever, I'm glad you're finally here.
 *   What? Why are you waiting for me?
     - I need you to open that door for me. #E.GreenDoorCamera
@@ -6,10 +7,10 @@ I've been waiting forever, I'm glad you're finally here.
       Ahh okay, bye then, thanks for nothing.. -> END
 
 == instructions ==
-Go to the panel, it's in the back room. #E.ShowBackRoom
+Go to the panel, it's in the back room. #E.HiddenDoorCamera
     * Why can't you do that?
       I'm too wide..
       * * Okay, I'm on it!
-          Thanks! -> END
+          Thanks! -> END 
 
 - ->END
