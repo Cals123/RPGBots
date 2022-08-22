@@ -8,6 +8,7 @@ public class ThirdPersonMovement : MonoBehaviour
     [SerializeField] float _moveSpeed = 5f;
     Rigidbody _rigidBody;
     Animator _animator;
+    float _mouseMovement;
 
     void Awake()
     {
@@ -15,17 +16,12 @@ public class ThirdPersonMovement : MonoBehaviour
         _animator = GetComponent<Animator>();
     }
 
-    void Update()
-    {
-
-        var MouseMovement = Input.GetAxis("Mouse X");
-        transform.Rotate(0, MouseMovement * Time.deltaTime * _turnSpeed, 0);
-
-    }
+    void Update() => _mouseMovement += Input.GetAxis("Mouse X");
 
     void FixedUpdate()
     {
-
+        transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
+        _mouseMovement = 0;
         float Horizontal = Input.GetAxis("Horizontal");
         float Vertical = Input.GetAxis("Vertical");
 
