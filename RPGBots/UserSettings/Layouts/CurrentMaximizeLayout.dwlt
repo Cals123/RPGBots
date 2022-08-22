@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 5794
+  controlID: 6212
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 5795
+  controlID: 6213
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 5776
+  controlID: 6214
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,10 +225,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 32}
-      m_SelectedIDs: be110000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 90c8ffff
       m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffff2a5e0000425e0000
+      m_ExpandedIDs: 16fbffff1afbffff425e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -244,7 +244,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 16}
+        m_ClientGUIView: {fileID: 0}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -328,8 +328,8 @@ MonoBehaviour:
     y: 0
     width: 1103
     height: 502
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -561,9 +561,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -10.779974, y: -0.91417044, z: -10.346936}
+    m_Target: {x: 18.057735, y: 0.73761743, z: 0.9580403}
     speed: 2
-    m_Value: {x: -10.779974, y: -0.91417044, z: -10.346936}
+    m_Value: {x: 18.057735, y: 0.73761743, z: 0.9580403}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.039143104, y: 0.8872654, z: -0.07625215, w: -0.45342702}
+    m_Target: {x: -0.02810759, y: -0.66544753, z: 0.025280736, w: -0.7456068}
     speed: 2
-    m_Value: {x: -0.039139535, y: 0.8871845, z: -0.076245196, w: -0.45338568}
+    m_Value: {x: -0.028105073, y: -0.665388, z: 0.025278473, w: -0.74554}
   m_Size:
     m_Target: 10
     speed: 2
@@ -809,22 +809,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/GameEvents
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/GameEvents
   m_LastFoldersGridSize: 96
   m_LastProjectPath: C:\Users\calum\Documents\GitHub\RPGBots\RPGBots
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 32}
-    m_SelectedIDs: 58630000
-    m_LastClickedID: 25432
-    m_ExpandedIDs: 00000000226300002463000026630000286300002a6300002c6300002e63000030630000326300005863000000ca9a3b
+    m_SelectedIDs: 46630000
+    m_LastClickedID: 25414
+    m_ExpandedIDs: 00000000226300002463000026630000286300002a6300002c6300002e630000306300003263000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -877,8 +877,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: be110000
-    m_LastClickedInstanceID: 4542
+    m_SelectedInstanceIDs: 90c8ffff
+    m_LastClickedInstanceID: -14192
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000fc5a0000be580000907100009c710000886f0000
     m_RenameOverlay:
@@ -986,8 +986,8 @@ MonoBehaviour:
     y: 0
     width: 454
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -1021,7 +1021,8 @@ MonoBehaviour:
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
-  m_ObjectsLockedBeforeSerialization: []
+  m_ObjectsLockedBeforeSerialization:
+  - {fileID: 11400000, guid: 05eee5ab65e8d7247b7713025484c4e6, type: 2}
   m_InstanceIDsLockedBeforeSerialization: 
   m_PreviewResizer:
     m_CachedPref: 160
@@ -1032,5 +1033,5 @@ MonoBehaviour:
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
-    m_IsLocked: 0
+    m_IsLocked: 1
   m_PreviewWindow: {fileID: 0}
