@@ -7,7 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogController : MonoBehaviour
+public class DialogController : ToggleablePanel
 {
 
     [SerializeField] Button[] _choiceButtons;
@@ -16,20 +16,12 @@ public class DialogController : MonoBehaviour
 
     Story _story;
 
-    CanvasGroup _canvasGroup;
-
-    void Awake()
-    {
-        _canvasGroup = GetComponent<CanvasGroup>();
-        ToggleCanvasOff();
-    }
-
     [ContextMenu("Start Dialog")]
     public void StartDialog(TextAsset dialog)
     {
         _story = new Story(dialog.text);
         RefreshView();
-        ToggleCanvasOn();
+        Show();
     }
 
 
@@ -44,7 +36,7 @@ public class DialogController : MonoBehaviour
         _storyText.SetText(storyTextBuilder);
 
         if (_story.currentChoices.Count == 0)
-            ToggleCanvasOff();
+            Hide();
         else
             ShowChoiceButtons();
     }
@@ -71,22 +63,6 @@ public class DialogController : MonoBehaviour
             }
         }
     }
-
-    void ToggleCanvasOn()
-    {
-        _canvasGroup.alpha = 0.8f;
-        _canvasGroup.interactable = true;
-        _canvasGroup.blocksRaycasts = true;
-
-    }
-
-    void ToggleCanvasOff()
-    {
-        _canvasGroup.alpha = 0f;
-        _canvasGroup.interactable = false;
-        _canvasGroup.blocksRaycasts = false;
-
-    }
     void HandleTags()
     {
         foreach (var tag in _story.currentTags)
@@ -100,4 +76,6 @@ public class DialogController : MonoBehaviour
         }
 
     }
+
+
 }
