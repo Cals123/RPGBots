@@ -16,7 +16,7 @@ public class ToggleablePanel : MonoBehaviour
         Hide();
     }
 
-    protected void Show()
+    public void Show()
     {
         _visiblePanels.Add(this);
         _canvasGroup.alpha = 0.8f;
