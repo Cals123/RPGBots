@@ -22,6 +22,7 @@ public class QuestPanel : ToggleablePanel
     {
         _selectedQuest = quest;
         Bind();
+        Show();
     }
 
     [ContextMenu("Bind")]

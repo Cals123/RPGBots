@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81f7807b8b1f0634191e60364adfa7e7, type: 3}
-  m_Name: Interact With Panel
+  m_Name: InteractWithPanel
   m_EditorClassIdentifier: 
   _steps:
   - _instructions: Press them buttons on that there control panel panini I'm hungry
