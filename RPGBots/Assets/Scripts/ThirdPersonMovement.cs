@@ -20,7 +20,9 @@ public class ThirdPersonMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
+        if (ToggleablePanel._isVisible() == false)
+            transform.Rotate(0, _mouseMovement * Time.deltaTime * _turnSpeed, 0);
+
         _mouseMovement = 0;
         float Horizontal = Input.GetAxis("Horizontal");
         float Vertical = Input.GetAxis("Vertical");
