@@ -17,19 +17,21 @@ public class QuestPanel : ToggleablePanel
 
     [SerializeField] Quest _selectedQuest;
 
-    [SerializeField] Step _selectedStep;
+    Step _selectedStep => _selectedQuest.CurrentStep;
+
     public void SelectQuest(Quest quest)
     {
+        _selectedQuest.Progressed -= DisplayStepInstructionsAndObjectives;
         _selectedQuest = quest;
         Bind();
         Show();
+        _selectedQuest.Progressed += DisplayStepInstructionsAndObjectives;
     }
 
     [ContextMenu("Bind")]
     public void Bind()
     {
         _iconImage.sprite = _selectedQuest.Sprite;
-        _selectedStep = _selectedQuest._steps.FirstOrDefault();
         _nameText.SetText(_selectedQuest.DisplayName);
         _descriptionText.SetText(_selectedQuest.Description);
         DisplayStepInstructionsAndObjectives();
@@ -50,4 +52,5 @@ public class QuestPanel : ToggleablePanel
             _currentObjectivesText.SetText(stringBuilder.ToString());
         }
     }
+
 }

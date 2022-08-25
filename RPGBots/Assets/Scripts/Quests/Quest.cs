@@ -7,7 +7,7 @@ using TMPro;
 [CreateAssetMenu(menuName = "Quest")]
 public class Quest : ScriptableObject
 {
-    public List<Step> _steps;
+    public List<Step> Steps;
 
     [Tooltip("Designer/programmer notes, not visible to player.")]
     [SerializeField] string _notes;
@@ -18,9 +18,18 @@ public class Quest : ScriptableObject
 
     [SerializeField] int _currentStepIndex;
 
+    public event Action Progressed;
+
     public string Description => _description;
     public string DisplayName => _displayName;
     public Sprite Sprite => _sprite;
+
+    public Step CurrentStep => Steps[_currentStepIndex]; 
+
+    private void OnEnable()
+    {
+        _currentStepIndex = 0;
+    }
 
     internal void TryProgress()
     {
@@ -28,11 +37,11 @@ public class Quest : ScriptableObject
         if (currentStep.HasAllObjectivesCompleted())
         {
             _currentStepIndex++;
-            // Do whatever we do when a quest progresses.
+            Progressed?.Invoke();
         }
     }
 
-    Step GetCurrentStep() => _steps[_currentStepIndex];
+    Step GetCurrentStep() => Steps[_currentStepIndex];
 }
 
 [Serializable]
@@ -50,8 +59,20 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
+    [SerializeField] GameFlag _gameFlag;
 
-    public bool IsCompleted { get; }
+    public bool IsCompleted
+    {
+        get
+        {
+            switch (_objectiveType)
+            {
+                case ObjectiveType.Flag: return _gameFlag.Value;
+                default: return false;
+
+            }
+        }
+    }
 
     public enum ObjectiveType
     {
@@ -60,5 +81,17 @@ public class Objective
         Kill
     }
 
-public override string ToString() => _objectiveType.ToString();
+    public override string ToString()
+    {
+        //return _objectiveType.ToString();
+
+
+        switch (_objectiveType)
+        {
+            case ObjectiveType.Flag: return _gameFlag.name;
+            default: return _objectiveType.ToString();
+
+        }
+
+    }
 }
