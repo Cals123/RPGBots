@@ -13,4 +13,5 @@ Go to the panel, it's in the back room. #E.ShowHiddenDoor
 Thanks! -> ending
 
 == ending ==
+#Q.InteractWithPanel
 -> END

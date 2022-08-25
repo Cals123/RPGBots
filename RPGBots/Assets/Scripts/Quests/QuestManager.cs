@@ -30,4 +30,13 @@ public partial class QuestManager : MonoBehaviour
         if (quest != null)
             AddQuest(quest);
     }
+
+    public void ProgressQuest()
+    {
+        foreach (var quest in _activeQuests)
+        {
+            quest.TryProgress();
+        }
+    }
+
 }
