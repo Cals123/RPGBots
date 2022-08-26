@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 81f7807b8b1f0634191e60364adfa7e7, type: 3}
-  m_Name: InteractWithPanel
+  m_Name: InspectThePanel
   m_EditorClassIdentifier: 
-  _steps:
-  - _instructions: Investigate the Control Panel in the back room.
-    _objectives:
-    - _objectiveType: 0
-      _gameFlag: {fileID: 11400000, guid: 98f7a3dc2a5f8f142a057d74c7c83cb2, type: 2}
-  - _instructions: investigate the Door.
+  Steps:
+  - _instructions: Go look at the panel.
     _objectives:
     - _objectiveType: 0
       _gameFlag: {fileID: 11400000, guid: 8d051a13f7a976446a9f9d1b5099a42c, type: 2}
   _notes: 'Idk what the next step is blah blah . . . '
   _displayName: Help Oogie Boogie
-  _description: Oogie Boogie is leaking fluids, they need your assistance desperately
-    . . .
+  _description: Oogie Boogie needs you assitance desperately. . .
   _sprite: {fileID: 21300000, guid: c40c7257fc81d9241a2d17c45c5c2042, type: 3}
   _currentStepIndex: 0

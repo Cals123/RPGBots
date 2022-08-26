@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f7807b8b1f0634191e60364adfa7e7, type: 3}
+  m_Name: Inspect The Door
+  m_EditorClassIdentifier: 
+  Steps:
+  - _instructions: Interact With The Panel.
+    _objectives:
+    - _objectiveType: 0
+      _gameFlag: {fileID: 11400000, guid: 98f7a3dc2a5f8f142a057d74c7c83cb2, type: 2}
+  _notes: 
+  _displayName: Investigate the panel.
+  _description: You need to investigate the panel which Oogie needs help opening.
+    . .
+  _sprite: {fileID: 21300000, guid: bb160ab818cea664fbac303919b70ba6, type: 3}
+  _currentStepIndex: 0

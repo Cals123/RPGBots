@@ -6036,7 +6036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24334
+  m_Name: pb_Mesh24344
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14361,7 +14361,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh24360
+  m_Name: pb_Mesh24370
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17198,11 +17198,6 @@ MonoBehaviour:
   _currentObjectivesText: {fileID: 1494131591}
   _iconImage: {fileID: 27506200}
   _selectedQuest: {fileID: 11400000, guid: 70296049252960b4eae7154f5913b253, type: 2}
-  _selectedStep:
-    _instructions: Go press them buttons on that there door over yonder there.
-    _objectives:
-    - _objectiveType: 0
-      _gameFlag: {fileID: 0}
 --- !u!225 &1823668699
 CanvasGroup:
   m_ObjectHideFlags: 0
