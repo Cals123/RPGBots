@@ -17,7 +17,6 @@ public class Quest : ScriptableObject
     [SerializeField] Sprite _sprite;
 
     [SerializeField] int _currentStepIndex;
-    [SerializeField] GameFlag _gameFlag;
 
     public event Action Changed;
     public string Description => _description;
@@ -34,6 +33,8 @@ public class Quest : ScriptableObject
             {
                 if (objective.GameFlag != null)
                     objective.GameFlag.Changed += HandleFlagChanged;
+                if (objective.IntGameFlag != null)
+                    objective.IntGameFlag.Changed += HandleFlagChanged;
             }
     }
 
@@ -41,6 +42,7 @@ public class Quest : ScriptableObject
     {
         TryProgress();
         Changed?.Invoke();
+
     }
 
     internal void TryProgress()
@@ -71,9 +73,16 @@ public class Step
 public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
-    [SerializeField] GameFlag _gameFlag;
-    public GameFlag GameFlag => _gameFlag;
+    [SerializeField] BoolGameFlag _gameFlag;
 
+    [Header("Int Game Flags")]
+    [SerializeField] IntGameFlag _intGameFlag;
+
+    [Tooltip("Required amount for the counted integer game flag.")]
+    [SerializeField] int _required = 1;
+
+    public BoolGameFlag GameFlag => _gameFlag;
+    public IntGameFlag IntGameFlag => _intGameFlag;
 
     public bool IsCompleted
     {
@@ -81,7 +90,8 @@ public class Objective
         {
             switch (_objectiveType)
             {
-                case ObjectiveType.Flag: return _gameFlag.Value;
+                case ObjectiveType.BoolFlag: return _gameFlag.Value;
+                case ObjectiveType.CountedIntFlag: return _intGameFlag.Value >= _required;
                 default: return false;
 
             }
@@ -91,19 +101,20 @@ public class Objective
 
     public enum ObjectiveType
     {
-        Flag,
+        BoolFlag,
+        CountedIntFlag,
         Item,
         Kill
     }
 
     public override string ToString()
     {
-        //return _objectiveType.ToString();
 
 
         switch (_objectiveType)
         {
-            case ObjectiveType.Flag: return _gameFlag.name;
+            case ObjectiveType.BoolFlag: return _gameFlag.name;
+            case ObjectiveType.CountedIntFlag: return $"{_intGameFlag.name} ({_intGameFlag.Value}/{_required})";
             default: return _objectiveType.ToString();
 
         }

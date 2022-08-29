@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "BoolGameFlag")]
-public class GameFlag : ScriptableObject
+public class BoolGameFlag : ScriptableObject
 {
     public bool Value { get; private set; }
 

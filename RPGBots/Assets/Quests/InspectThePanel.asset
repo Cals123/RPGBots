@@ -13,16 +13,24 @@ MonoBehaviour:
   m_Name: InspectThePanel
   m_EditorClassIdentifier: 
   Steps:
+  - _instructions: Inspect The Broken Control Panels.
+    Objectives:
+    - _objectiveType: 1
+      _gameFlag: {fileID: 0}
+      _intGameFlag: {fileID: 11400000, guid: b91b67382d68faf4fb348a839336d133, type: 2}
+      _required: 3
   - _instructions: 'Assist Oogie with His Leaky Fluids:'
-    _objectives:
+    Objectives:
     - _objectiveType: 0
       _gameFlag: {fileID: 11400000, guid: 98f7a3dc2a5f8f142a057d74c7c83cb2, type: 2}
+      _intGameFlag: {fileID: 0}
+      _required: 1
     - _objectiveType: 0
       _gameFlag: {fileID: 11400000, guid: 8e03e998d2a94314e9f14f9f84e00ff0, type: 2}
+      _intGameFlag: {fileID: 0}
+      _required: 1
   - _instructions: Go look at the door.
-    _objectives:
-    - _objectiveType: 0
-      _gameFlag: {fileID: 11400000, guid: 8d051a13f7a976446a9f9d1b5099a42c, type: 2}
+    Objectives: []
   _notes: 'Idk what the next step is blah blah . . . '
   _displayName: Help Oogie Boogie
   _description: Oogie Boogie needs you assitance desperately. . .
