@@ -6,7 +6,7 @@ public class GameFlagTriggerArea : MonoBehaviour
 {
     [SerializeField] GameFlag _gameFlag;
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         _gameFlag.Set(true);
 

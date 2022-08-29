@@ -10,6 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57ef817a34d9f224d9df4029a3e878f8, type: 3}
-  m_Name: InspectThePanel
+  m_Name: Activate The Control Panel
   m_EditorClassIdentifier: 
-  Value: 0

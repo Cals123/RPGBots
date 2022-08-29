@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: InspectThePanel
   m_EditorClassIdentifier: 
   Steps:
-  - _instructions: Go look at the panel.
+  - _instructions: 'Assist Oogie with His Leaky Fluids:'
+    _objectives:
+    - _objectiveType: 0
+      _gameFlag: {fileID: 11400000, guid: 98f7a3dc2a5f8f142a057d74c7c83cb2, type: 2}
+    - _objectiveType: 0
+      _gameFlag: {fileID: 11400000, guid: 8e03e998d2a94314e9f14f9f84e00ff0, type: 2}
+  - _instructions: Go look at the door.
     _objectives:
     - _objectiveType: 0
       _gameFlag: {fileID: 11400000, guid: 8d051a13f7a976446a9f9d1b5099a42c, type: 2}

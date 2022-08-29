@@ -17,18 +17,30 @@ public class Quest : ScriptableObject
     [SerializeField] Sprite _sprite;
 
     [SerializeField] int _currentStepIndex;
+    [SerializeField] GameFlag _gameFlag;
 
-    public event Action Progressed;
-
+    public event Action Changed;
     public string Description => _description;
     public string DisplayName => _displayName;
     public Sprite Sprite => _sprite;
 
-    public Step CurrentStep => Steps[_currentStepIndex]; 
+    public Step CurrentStep => Steps[_currentStepIndex];
 
-    private void OnEnable()
+    void OnEnable()
     {
         _currentStepIndex = 0;
+        foreach (var step in Steps)
+            foreach (var objective in step.Objectives)
+            {
+                if (objective.GameFlag != null)
+                    objective.GameFlag.Changed += HandleFlagChanged;
+            }
+    }
+
+    public void HandleFlagChanged()
+    {
+        TryProgress();
+        Changed?.Invoke();
     }
 
     internal void TryProgress()
@@ -37,7 +49,7 @@ public class Quest : ScriptableObject
         if (currentStep.HasAllObjectivesCompleted())
         {
             _currentStepIndex++;
-            Progressed?.Invoke();
+            Changed?.Invoke();
         }
     }
 
@@ -49,9 +61,9 @@ public class Step
 {
     [SerializeField] string _instructions;
     public string Instructions => _instructions;
-    public List<Objective> _objectives;
+    public List<Objective> Objectives;
 
-    public bool HasAllObjectivesCompleted() => _objectives.TrueForAll(t => t.IsCompleted);
+    public bool HasAllObjectivesCompleted() => Objectives.TrueForAll(t => t.IsCompleted);
 
 }
 
@@ -60,6 +72,8 @@ public class Objective
 {
     [SerializeField] ObjectiveType _objectiveType;
     [SerializeField] GameFlag _gameFlag;
+    public GameFlag GameFlag => _gameFlag;
+
 
     public bool IsCompleted
     {
@@ -73,6 +87,7 @@ public class Objective
             }
         }
     }
+
 
     public enum ObjectiveType
     {

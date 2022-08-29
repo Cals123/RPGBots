@@ -21,11 +21,11 @@ public class QuestPanel : ToggleablePanel
 
     public void SelectQuest(Quest quest)
     {
-        _selectedQuest.Progressed -= DisplayStepInstructionsAndObjectives;
+        _selectedQuest.Changed -= DisplayStepInstructionsAndObjectives;
         _selectedQuest = quest;
         Bind();
         Show();
-        _selectedQuest.Progressed += DisplayStepInstructionsAndObjectives;
+        _selectedQuest.Changed += DisplayStepInstructionsAndObjectives;
     }
 
     [ContextMenu("Bind")]
@@ -44,9 +44,10 @@ public class QuestPanel : ToggleablePanel
         {
             stringBuilder.AppendLine(_selectedStep.Instructions);
 
-            foreach (var objective in _selectedStep._objectives)
+            foreach (var objective in _selectedStep.Objectives)
             {
-                stringBuilder.AppendLine(objective.ToString());
+                string rgb = objective.IsCompleted ? "green" : "red";
+                stringBuilder.AppendLine($"<color={rgb}>{objective}</color>");
 
             }
             _currentObjectivesText.SetText(stringBuilder.ToString());
