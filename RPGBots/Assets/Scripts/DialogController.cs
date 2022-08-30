@@ -78,6 +78,13 @@ public class DialogController : ToggleablePanel
                 string questName = tag.Remove(0, 2);
                 QuestManager.Instance.AddQuestByName(questName);
             }
+            else if (tag.StartsWith("F."))
+            {
+                var values = tag.Split('.');
+                // F.BrokenPanelIsInspected
+                //string flagName = tag.Remove(0, 2);
+                FlagManager.Instance.Set(values[1], values[2]);
+            }
         }
 
     }

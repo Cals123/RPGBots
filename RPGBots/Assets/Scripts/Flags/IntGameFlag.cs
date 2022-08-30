@@ -6,7 +6,14 @@ public class IntGameFlag : GameFlag<int>
 {
     public void Modify(int value)
     {
-        Value++;
+        Value += value;
         SendChanged();
+    }
+
+    internal void Set(int intGameValue)
+    {
+        Value = intGameValue;
+        SendChanged();
+
     }
 }
