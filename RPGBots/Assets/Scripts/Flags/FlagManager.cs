@@ -9,14 +9,19 @@ internal class FlagManager : MonoBehaviour
 {
     [SerializeField] List<GameFlag>  _allFlags;
 
+    Dictionary<string, GameFlag> _flagsbyName;
+
+    void Start()
+    {
+        _flagsbyName = _allFlags.ToDictionary(k => k.name.Replace(" ", ""), v => v);
+    }
     public static FlagManager Instance { get; private set; }
 
     void Awake() => Instance = this;
 
-    internal void Set(string flagName, string value)
+    public void Set(string flagName, string value)
     {
-        var flag = _allFlags.FirstOrDefault(t => t.name.Replace(" ", "") == flagName);
-        if (flag == null)
+        if (_flagsbyName.TryGetValue(flagName, out var flag) == false)
             Debug.LogError($"Flag Not Found {flagName}");
         if (flag is IntGameFlag intGameFlag)
         {
