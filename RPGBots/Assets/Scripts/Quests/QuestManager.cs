@@ -18,9 +18,6 @@ public partial class QuestManager : MonoBehaviour
         Instance = this;    
     }
 
-    //private void Start() => GameFlag.AnyChanged += ProgressQuest;
-    //private void OnDestroy() => GameFlag.AnyChanged -= ProgressQuest;
-
     public void AddQuest(Quest quest)
     {
         _activeQuests.Add(quest);
@@ -33,14 +30,4 @@ public partial class QuestManager : MonoBehaviour
         if (quest != null)
             AddQuest(quest);
     }
-
-    //[ContextMenu("Progress Quests")]
-    //public void ProgressQuest()
-    //{
-    //    foreach (var quest in _activeQuests)
-    //    {
-    //        quest.TryProgress();
-    //    }
-    //}
-
 }

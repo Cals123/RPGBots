@@ -33,8 +33,6 @@ public class Quest : ScriptableObject
             {
                 if (objective.GameFlag != null)
                     objective.GameFlag.Changed += HandleFlagChanged;
-                if (objective.IntGameFlag != null)
-                    objective.IntGameFlag.Changed += HandleFlagChanged;
             }
     }
 
@@ -67,57 +65,4 @@ public class Step
 
     public bool HasAllObjectivesCompleted() => Objectives.TrueForAll(t => t.IsCompleted);
 
-}
-
-[Serializable]
-public class Objective
-{
-    [SerializeField] ObjectiveType _objectiveType;
-    [SerializeField] BoolGameFlag _gameFlag;
-
-    [Header("Int Game Flags")]
-    [SerializeField] IntGameFlag _intGameFlag;
-
-    [Tooltip("Required amount for the counted integer game flag.")]
-    [SerializeField] int _required = 1;
-
-    public BoolGameFlag GameFlag => _gameFlag;
-    public IntGameFlag IntGameFlag => _intGameFlag;
-
-    public bool IsCompleted
-    {
-        get
-        {
-            switch (_objectiveType)
-            {
-                case ObjectiveType.BoolFlag: return _gameFlag.Value;
-                case ObjectiveType.CountedIntFlag: return _intGameFlag.Value >= _required;
-                default: return false;
-
-            }
-        }
-    }
-
-
-    public enum ObjectiveType
-    {
-        BoolFlag,
-        CountedIntFlag,
-        Item,
-        Kill
-    }
-
-    public override string ToString()
-    {
-
-
-        switch (_objectiveType)
-        {
-            case ObjectiveType.BoolFlag: return _gameFlag.name;
-            case ObjectiveType.CountedIntFlag: return $"{_intGameFlag.name} ({_intGameFlag.Value}/{_required})";
-            default: return _objectiveType.ToString();
-
-        }
-
-    }
 }
