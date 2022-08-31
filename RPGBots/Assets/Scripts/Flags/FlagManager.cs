@@ -28,5 +28,19 @@ internal class FlagManager : MonoBehaviour
             if (int.TryParse(value, out var intGameValue))
                 intGameFlag.Set(intGameValue);
         }
+        if (flag is BoolGameFlag boolGameFlag)
+        {
+            if (bool.TryParse(value, out var boolGameValue))
+                boolGameFlag.Set(boolGameFlag);
+        }
+        if (flag is StringGameFlag stringGameFlag)
+        {
+                stringGameFlag.Set(value);
+        }
+        if (flag is DecimalGameFlag decimalGameFlag)
+        {
+            if (decimal.TryParse(value, out var boolGameValue))
+                decimalGameFlag.Set(boolGameValue);
+        }
     }
 }

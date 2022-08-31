@@ -12,6 +12,13 @@ public class GameFlag : ScriptableObject
 public class GameFlag<T> : GameFlag
 {
     public T Value { get; protected set; }
+    
+
+    public void Set(T value)
+    {
+        Value = value;
+        SendChanged();
+    }
     private void OnDisable() => Value = default;
     private void OnEnable() => Value = default;
     

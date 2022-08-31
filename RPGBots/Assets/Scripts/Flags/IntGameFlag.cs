@@ -1,19 +1,12 @@
 ﻿using System;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "IntGameFlag")]
+[CreateAssetMenu(menuName = "GameFlag/Int")]
 public class IntGameFlag : GameFlag<int>
 {
     public void Modify(int value)
     {
         Value += value;
         SendChanged();
-    }
-
-    internal void Set(int intGameValue)
-    {
-        Value = intGameValue;
-        SendChanged();
-
     }
 }

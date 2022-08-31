@@ -15,7 +15,7 @@ MonoBehaviour:
   Steps:
   - _instructions: Inspect The Broken Control Panels.
     Objectives:
-    - _objectiveType: 1
+    - _objectiveType: 0
       _gameFlag: {fileID: 11400000, guid: b91b67382d68faf4fb348a839336d133, type: 2}
       _required: 3
   - _instructions: 'Assist Oogie with His Leaky Fluids:'
@@ -32,4 +32,4 @@ MonoBehaviour:
   _displayName: Help Oogie Boogie
   _description: Oogie Boogie needs you assitance desperately. . .
   _sprite: {fileID: 21300000, guid: c40c7257fc81d9241a2d17c45c5c2042, type: 3}
-  _currentStepIndex: 0
+  _currentStepIndex: 1

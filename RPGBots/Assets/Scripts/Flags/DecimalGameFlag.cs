@@ -1,15 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "DecimalGameFlag")]
+[CreateAssetMenu(menuName = "GameFlag/Decimal")]
 public class DecimalGameFlag : GameFlag<decimal>
 {
-    public void SetDecimal(decimal dec)
-    {
-        Value = dec;
-        SendChanged();
-    }
-
-
 }
